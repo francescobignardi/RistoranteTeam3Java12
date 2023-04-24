@@ -1,0 +1,43 @@
+Ristorante Team 3
+
+Carnivoro
+
+BEVANDE
+
+Acqua naturale 2,00€
+Acqua frizzante 2,00€
+Birra 4,00€
+Vino 8,00€
+CocaCola 3,00€
+
+ANTIPASTI
+
+Patatine fritte €4,00
+Misto caldo €6,00
+Bruschette al pomodoro €5,00
+Tagliere di salumi e formaggi €12,00
+Caponata €5,50
+
+PRIMI PIATTI
+
+Carbonara 11,00€
+Amatriciana 10,00€
+Lasagne al ragù 6,00€
+Boscaiola 10,00€
+Tagliatelle con ragù di maialino dei Nebrodi 16,00€
+
+SECONDI PIATTI
+
+Tagliata 22,00€
+Bistecca 25,00€
+Coda alla vaccinara 20€
+Cotoletta alla milanese 14 €
+Cotoletta alla bolognese 16€
+
+
+DOLCI
+Pannacotta 3€
+Babà 4€
+Zeppole 2,50€
+Pastiera 5€
+Sfogliatella 4,50€
