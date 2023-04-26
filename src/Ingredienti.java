@@ -7,5 +7,16 @@ public enum Ingredienti {
     TRITATO,
     RISO,
     PROSCIUTTO_COTTO,
+    PROSCIUTTO_CRUDO,
+    SALAME,
+    PARMIGIANO_REGGIANO,
+    CACIOCAVALLO,
+    PECORINO,
+    PATATE,
+    MELANZANE,
+    LATTE,
+    FUNGHI,
+    CAROTE,
+    CIPOLLA,
 
 }
