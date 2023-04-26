@@ -18,5 +18,12 @@ public enum Ingredienti {
     FUNGHI,
     CAROTE,
     CIPOLLA,
+    BURRO,
+    PETTO_DI_POLLO,
+    FILETTO_MANZO,
+    ZUCCHERO,
+    RUM,
+    CARAMELLO,
+
 
 }
