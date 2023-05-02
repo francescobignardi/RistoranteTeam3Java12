@@ -2,10 +2,10 @@ public class Dolci extends Portata{
     private boolean isSugarFree;
     private boolean isLactoseFree;
 
-    public Dolci(String name, double price/* ,boolean isLactoseFree, boolean isSugarFree*/) {
+    public Dolci(String name, double price,boolean isLactoseFree, boolean isSugarFree) {
         super(name, price);
-//        this.isLactoseFree=isLactoseFree;
-//        this.isSugarFree=isSugarFree;
+        this.isLactoseFree=isLactoseFree;
+        this.isSugarFree=isSugarFree;
     }
 
     public boolean isSugarFree() {

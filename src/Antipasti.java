@@ -2,10 +2,10 @@ public class Antipasti extends Portata {
     private boolean isCold;
     private boolean isFried;
 
-    public Antipasti(String name, double price/*, boolean isCold, boolean isFried*/) {
+    public Antipasti(String name, double price, boolean isCold, boolean isFried) {
         super(name, price);
-//        this.isCold=isCold;
-//        this.isFried=isFried;
+        this.isCold=isCold;
+        this.isFried=isFried;
     }
 
     public boolean isCold() {
