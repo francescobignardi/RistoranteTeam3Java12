@@ -24,6 +24,6 @@ public abstract class Portata {
     }
 
     public void print(){
-        System.out.println(getName()+" €"+getPrice());
+        System.out.println(Colori_ANSI.GREEN.colorCode+getName()+" €"+getPrice());
     }
 }
