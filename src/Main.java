@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         Menu menu = new Menu("Il menu di casa", "Bastianich", MenuType.CARNIVORO);
@@ -30,8 +33,12 @@ public class Main {
         menu.addPortata(new Dolci("Zeppole", 2.50, false, false));
         menu.addPortata(new Dolci("Pastiera", 5.00, false, false));
         menu.addPortata(new Dolci("Sfogliatella", 4.50, false, false));
+        List<Menu> list1=new ArrayList<>();
+        list1.add(menu);
 
-        menu.print();
+       Ristorante ristorante= new Ristorante("Pippolandia", list1,"Rinomato ristorante pluripremiato, per tutti i plati",4,"Via vatteneapesca, 13", 25);
+       ristorante.printRistorante();
+
 
     }
 }
