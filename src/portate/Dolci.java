@@ -1,3 +1,5 @@
+package portate;
+
 public class Dolci extends Portata{
     private boolean isSugarFree;
     private boolean isLactoseFree;
@@ -19,5 +21,10 @@ public class Dolci extends Portata{
     }
     public void setLactoseFree(boolean lactoseFree) {
         isLactoseFree = lactoseFree;
+    }
+
+    @Override
+    public void print() {
+        super.print();
     }
 }

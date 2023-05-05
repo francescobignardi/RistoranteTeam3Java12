@@ -1,3 +1,5 @@
+package enumaration;
+
 public enum Ingredienti {
     FARINA_00,
     FARINA_0,

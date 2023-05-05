@@ -1,9 +1,12 @@
+import enumaration.TypeEnum;
+import portate.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Menu menu = new Menu("Il menu di casa", "Bastianich", MenuType.CARNIVORO);
+        Menu menu = new Menu("Il menu di casa", "Bastianich", TypeEnum.CARNIVORO);
         menu.addPortata(new PrimoPiatto("Carbonara", 11.00, false, false));
         menu.addPortata(new PrimoPiatto("Amatriciana", 10.00, false, false));
         menu.addPortata(new PrimoPiatto("Lasagne al ragu", 6.00, false, false));

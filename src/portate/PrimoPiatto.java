@@ -1,3 +1,5 @@
+package portate;
+
 public class PrimoPiatto extends Portata {
     private boolean isIntegral;
     private boolean isGlutenFree;

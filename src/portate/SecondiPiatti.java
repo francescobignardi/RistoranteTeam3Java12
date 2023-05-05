@@ -1,3 +1,5 @@
+package portate;
+
 public class SecondiPiatti extends  Portata{
     private boolean isOutMenu;
     private boolean hasSideDish;

@@ -1,3 +1,5 @@
+package portate;
+
 public class Bevande extends  Portata{
     private boolean isCold;
     private boolean isHomeMade;

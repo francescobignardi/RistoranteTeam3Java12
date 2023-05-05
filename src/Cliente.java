@@ -1,3 +1,5 @@
+import enumaration.TypeEnum;
+
 public class Cliente {
 
     private String name;
@@ -5,9 +7,9 @@ public class Cliente {
     private String telephoneNumber;
     private String eMail;
     private int age;
-    private MenuType alimentazione;
+    private TypeEnum alimentazione;
 
-    public Cliente(String name, String address, String telephoneNumber, String eMail, int age, MenuType alimentazione) {
+    public Cliente(String name, String address, String telephoneNumber, String eMail, int age, TypeEnum alimentazione) {
         this.name = name;
         this.address = address;
         this.telephoneNumber = telephoneNumber;
@@ -46,10 +48,10 @@ public class Cliente {
     public void setAge(int age) {
         this.age = age;
     }
-    public MenuType getAlimentazione() {
+    public TypeEnum getAlimentazione() {
         return alimentazione;
     }
-    public void setAlimentazione(MenuType alimentazione) {
+    public void setAlimentazione(TypeEnum alimentazione) {
         this.alimentazione = alimentazione;
     }
 }

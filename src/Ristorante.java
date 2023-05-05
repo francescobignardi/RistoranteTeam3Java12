@@ -30,6 +30,8 @@ public class Ristorante {
     public void setMenuList(List<Menu> menuList) {
         this.menuList = menuList;
     }
+
+    //TODO stiamo stampando tutti i menu invece a noi serve di dare un menù al cliente del tipo uguale al cliente
     public void printRistorante(){
         System.out.println("Ristrante "+name+" "+stelleMichelin+" Stelle Michelin\nPrezzo Medio "+mediumPrice+" €\n"+description+"\nSito im "+address+"\n");
         for (Menu menu:menuList){

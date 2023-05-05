@@ -1,3 +1,5 @@
+package portate;
+
 public class Antipasti extends Portata {
     private boolean isCold;
     private boolean isFried;

@@ -1,14 +1,16 @@
-import java.util.ArrayList;
+import enumaration.TypeEnum;
+import portate.*;
+
 import java.util.HashSet;
 import java.util.Set;
 
 public class Menu {
-    private MenuType menuType;
+    private TypeEnum menuType;
     private String name;
     private String chef;
     private Set<Portata> portataList;
 
-    public Menu(String menu, String chef, MenuType menuType) {
+    public Menu(String menu, String chef, TypeEnum menuType) {
         this.name = menu;
         this.chef = chef;
         this.menuType = menuType;
@@ -31,40 +33,42 @@ public class Menu {
         this.chef = chef;
     }
 
-    public MenuType getMenuType() {
+    public TypeEnum getMenuType() {
         return menuType;
     }
 
-    public void setMenuType(MenuType menuType) {
+    public void setMenuType(TypeEnum menuType) {
         this.menuType = menuType;
     }
 
     public void print() {
-        System.out.println("Antipasti\n");
+        //TODO sistemare
+        System.out.println("portate.Antipasti\n");
         for (Portata portata : portataList) {
             if (portata.getClass() == Antipasti.class) {
                 portata.print();
             }
-        }
-        System.out.println("\nPrimi piatti\n");
-        for (Portata portata : portataList) {
             if (portata.getClass() == PrimoPiatto.class) {
                 portata.print();
             }
-        }
-        System.out.println("\nSecondi piatti\n");
-        for (Portata portata : portataList) {
+            System.out.println("\nPrimi piatti\n");
             if (portata.getClass() == SecondiPiatti.class) {
                 portata.print();
             }
         }
-        System.out.println("\nDolci\n");
         for (Portata portata : portataList) {
-            if (portata.getClass() == Dolci.class) {
+        }
+        System.out.println("\nSecondi piatti\n");
+        for (Portata portata : portataList) {
+        }
+        System.out.println("\nportate.Dolci\n");
+        for (Portata portata : portataList) {
+            //TODO sistemare
+            if (portata instanceof Dolci) {
                 portata.print();
             }
         }
-        System.out.println("\nBevande\n");
+        System.out.println("\nportate.Bevande\n");
         for (Portata portata : portataList) {
             if (portata.getClass() == Bevande.class) {
                 portata.print();

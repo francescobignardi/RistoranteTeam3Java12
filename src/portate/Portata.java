@@ -1,3 +1,5 @@
+package portate;
+
 public abstract class Portata {
     private String name;
     private double price;
@@ -25,5 +27,6 @@ public abstract class Portata {
 
     public void print(){
         System.out.println(name+" €"+price);
+        System.out.println(ColoriAnsiEnum.GREEN.getColorCode()+" €"+price + ColoriAnsiEnum.ANSI_RESET.getColorCode());
     }
 }
