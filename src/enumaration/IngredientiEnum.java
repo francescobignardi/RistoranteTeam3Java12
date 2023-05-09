@@ -1,6 +1,6 @@
 package enumaration;
 
-public enum Ingredienti {
+public enum IngredientiEnum {
     FARINA_00,
     FARINA_0,
     POMODORO,
