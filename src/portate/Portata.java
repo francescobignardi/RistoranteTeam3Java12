@@ -11,6 +11,7 @@ public abstract class Portata {
         this.price = price;
     }
 
+
     public String getName() {
         return name;
     }
