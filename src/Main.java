@@ -40,8 +40,7 @@ public class Main {
         list1.add(menu);
 
        Ristorante ristorante= new Ristorante("B12", list1,"Rinomato ristorante pluripremiato, per tutti i palati",4,"Via Roma, 13");
-       ristorante.printRistorante();
-
-
+       Cliente cliente1= new Cliente("Gabriele", "", "","", 24, TypeEnum.CARNIVORO);
+       ristorante.printRistorante(cliente1);
     }
 }

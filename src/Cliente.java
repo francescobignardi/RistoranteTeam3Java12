@@ -7,15 +7,15 @@ public class Cliente {
     private String telephoneNumber;
     private String eMail;
     private int age;
-    private TypeEnum alimentazione;
+    private TypeEnum tipo;
 
-    public Cliente(String name, String address, String telephoneNumber, String eMail, int age, TypeEnum alimentazione) {
+    public Cliente(String name, String address, String telephoneNumber, String eMail, int age, TypeEnum tipo) {
         this.name = name;
         this.address = address;
         this.telephoneNumber = telephoneNumber;
         this.eMail = eMail;
         this.age = age;
-        this.alimentazione = alimentazione;
+        this.tipo = tipo;
     }
 
     public String getName() {
@@ -48,10 +48,10 @@ public class Cliente {
     public void setAge(int age) {
         this.age = age;
     }
-    public TypeEnum getAlimentazione() {
-        return alimentazione;
+    public TypeEnum getTipo() {
+        return tipo;
     }
-    public void setAlimentazione(TypeEnum alimentazione) {
-        this.alimentazione = alimentazione;
+    public void setTipo(TypeEnum alimentazione) {
+        this.tipo = tipo;
     }
 }

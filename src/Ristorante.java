@@ -40,10 +40,12 @@ public class Ristorante {
     }
 
     //TODO stiamo stampando tutti i menu invece a noi serve di dare un menù al cliente del tipo uguale al cliente
-    public void printRistorante(){
+    public void printRistorante(Cliente cliente){
         System.out.println("Ristrante "+name+" "+stelleMichelin+" Stelle Michelin\nPrezzo Medio "+mediumPrice+" €\n"+description+"\nSito in "+address+"\n");
         for (Menu menu:menuList){
+            if(cliente.getTipo()==menu.getMenuType()){
             menu.print();
+            }
         }
     }
 }

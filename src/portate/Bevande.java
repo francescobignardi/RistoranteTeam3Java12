@@ -41,7 +41,7 @@ public class Bevande extends  Portata{
         if (isHomeMade) {
             System.out.println(ColoriAnsiEnum.ANSI_GREEN.getColorCode() + "è fatto in casa " + ColoriAnsiEnum.ANSI_RESET.getColorCode());
         } else {
-            System.out.println(ColoriAnsiEnum.ANSI_RED.getColorCode() + "non è  fatto in casa" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
+            System.out.println(ColoriAnsiEnum.ANSI_RED.getColorCode() + "non è fatto in casa" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
         }
     }
 }
