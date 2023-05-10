@@ -32,9 +32,9 @@ public class Dolci extends Portata{
     public void print() {
         super.print();
         if (isSugarFree) {
-            System.out.println(ColoriAnsiEnum.ANSI_GREEN.getColorCode() + "e' senza zucchero'" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
+            System.out.println(ColoriAnsiEnum.ANSI_GREEN.getColorCode() + "è senza zucchero'" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
         } else {
-            System.out.println(ColoriAnsiEnum.ANSI_RED.getColorCode() + "non e' senza zucchero" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
+            System.out.println(ColoriAnsiEnum.ANSI_RED.getColorCode() + "non è senza zucchero" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
         }
         if (isLactoseFree) {
             System.out.println(ColoriAnsiEnum.ANSI_GREEN.getColorCode() + "è senza lattosio " + ColoriAnsiEnum.ANSI_RESET.getColorCode());

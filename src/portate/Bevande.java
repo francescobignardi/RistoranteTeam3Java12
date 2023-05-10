@@ -34,9 +34,9 @@ public class Bevande extends  Portata{
     public void print() {
         super.print();
         if (isCold) {
-            System.out.println(ColoriAnsiEnum.ANSI_GREEN.getColorCode() + "e' freddo" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
+            System.out.println(ColoriAnsiEnum.ANSI_GREEN.getColorCode() + "è freddo" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
         } else {
-            System.out.println(ColoriAnsiEnum.ANSI_RED.getColorCode() + "non e' freddo" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
+            System.out.println(ColoriAnsiEnum.ANSI_RED.getColorCode() + "non è freddo" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
         }
         if (isHomeMade) {
             System.out.println(ColoriAnsiEnum.ANSI_GREEN.getColorCode() + "è fatto in casa " + ColoriAnsiEnum.ANSI_RESET.getColorCode());

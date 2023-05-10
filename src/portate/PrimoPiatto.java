@@ -36,9 +36,9 @@ public class PrimoPiatto extends Portata {
     public void print() {
         super.print();
         if (isIntegral) {
-            System.out.println(ColoriAnsiEnum.ANSI_GREEN.getColorCode() + "e' integrale" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
+            System.out.println(ColoriAnsiEnum.ANSI_GREEN.getColorCode() + "è integrale" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
         } else {
-            System.out.println(ColoriAnsiEnum.ANSI_RED.getColorCode() + "non e' integrale" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
+            System.out.println(ColoriAnsiEnum.ANSI_RED.getColorCode() + "non è integrale" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
         }
         if (isGlutenFree) {
             System.out.println(ColoriAnsiEnum.ANSI_GREEN.getColorCode() + "contiene glutine" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
