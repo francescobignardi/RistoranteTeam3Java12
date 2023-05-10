@@ -1,5 +1,7 @@
 package portate;
 
+import enumaration.ColoriAnsiEnum;
+
 public class SecondiPiatti extends  Portata{
     private boolean isOutMenu;
     private boolean hasSideDish;
@@ -21,5 +23,20 @@ public class SecondiPiatti extends  Portata{
     }
     public void setHasSideDish(boolean hasSideDish) {
         this.hasSideDish = hasSideDish;
+    }
+
+    @Override
+    public void print() {
+        super.print();
+        if (isOutMenu) {
+            System.out.println(ColoriAnsiEnum.ANSI_GREEN.getColorCode() + "e' fuori dal menu'" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
+        } else {
+            System.out.println(ColoriAnsiEnum.ANSI_RED.getColorCode() + "non e' fuori dal menu'" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
+        }
+        if (hasSideDish) {
+            System.out.println(ColoriAnsiEnum.ANSI_GREEN.getColorCode() + "ha contorno " + ColoriAnsiEnum.ANSI_RESET.getColorCode());
+        } else {
+            System.out.println(ColoriAnsiEnum.ANSI_RED.getColorCode() + "non ha contorno" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
+        }
     }
 }

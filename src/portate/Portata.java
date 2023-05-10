@@ -1,5 +1,7 @@
 package portate;
 
+import enumaration.*;
+
 public abstract class Portata {
     private String name;
     private double price;
@@ -25,8 +27,8 @@ public abstract class Portata {
         this.price = price;
     }
 
-    public void print(){
-        System.out.println(name+" €"+price);
-        System.out.println(ColoriAnsiEnum.GREEN.getColorCode()+" €"+price + ColoriAnsiEnum.ANSI_RESET.getColorCode());
+
+    public void print() {
+        System.out.println(ColoriAnsiEnum.BACKGROUND_GREEN.getColorCode() + ColoriAnsiEnum.ANSI_RED.getColorCode() + name + " €" + price + ColoriAnsiEnum.ANSI_RESET.getColorCode());
     }
 }
