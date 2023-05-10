@@ -6,16 +6,16 @@ public class Ristorante {
     private String description;
     private int stelleMichelin;
     private String address;
-    private int mediumPrice;
+    private double mediumPrice;
 
 
-    public Ristorante(String name, List<Menu> menuList, String description, int stelleMichelin, String address, int mediumPrice) {
+    public Ristorante(String name, List<Menu> menuList, String description, int stelleMichelin, String address) {
         this.name = name;
         this.menuList = menuList;
         this.description = description;
         this.stelleMichelin = stelleMichelin;
         this.address = address;
-        this.mediumPrice = mediumPrice;
+        this.mediumPrice = Menu.prezzoMedio();
     }
 
     public String getName() {
@@ -29,6 +29,14 @@ public class Ristorante {
     }
     public void setMenuList(List<Menu> menuList) {
         this.menuList = menuList;
+    }
+
+    public double getMediumPrice() {
+        return mediumPrice;
+    }
+
+    public void setMediumPrice(double mediumPrice) {
+        this.mediumPrice = mediumPrice;
     }
 
     //TODO stiamo stampando tutti i menu invece a noi serve di dare un menù al cliente del tipo uguale al cliente

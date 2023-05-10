@@ -5,11 +5,13 @@ import enumaration.ColoriAnsiEnum;
 public class PrimoPiatto extends Portata {
     private boolean isIntegral;
     private boolean isGlutenFree;
+    private static int counterPrimoPiatto = 0;
 
     public PrimoPiatto(String name, double price, boolean isIntegral, boolean isGlutenFree) {
         super(name, price);
         this.isIntegral = isIntegral;
         this.isGlutenFree = isGlutenFree;
+        counterPrimoPiatto += 1;
     }
 
     public boolean isIntegral() {
@@ -27,6 +29,8 @@ public class PrimoPiatto extends Portata {
     public void setGlutenFree(boolean glutenFree) {
         isGlutenFree = glutenFree;
     }
+
+    public static int getCounterPrimoPiatto(){return counterPrimoPiatto;}
 
     @Override
     public void print() {

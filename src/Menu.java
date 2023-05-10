@@ -8,7 +8,7 @@ public class Menu {
     private TypeEnum menuType;
     private String name;
     private String chef;
-    private Set<Portata> portataList;
+    private static Set<Portata> portataList;
 
     public Menu(String menu, String chef, TypeEnum menuType) {
         this.name = menu;
@@ -84,5 +84,37 @@ public class Menu {
 
     public void removePortata(Portata portata) {
         portataList.remove(portata);
+    }
+
+    public static double prezzoMedio() {
+        int prezzo = 0;
+        int prezzoAntipasti = 0;
+        int prezzoPrimoPiatto = 0;
+        int prezzoSecondoPiatto = 0;
+        int prezzoDolci = 0;
+        int prezzoBevande = 0;
+        for (Portata portata : portataList) {
+            if (portata instanceof Antipasti) {
+                prezzoAntipasti += portata.getPrice();
+            }
+            if (portata instanceof PrimoPiatto) {
+                prezzoPrimoPiatto += portata.getPrice();
+            }
+            if (portata instanceof SecondiPiatti) {
+                prezzoSecondoPiatto += portata.getPrice();
+            }
+            if (portata instanceof Dolci) {
+                prezzoDolci += portata.getPrice();
+            }
+            if (portata instanceof Bevande) {
+                prezzoBevande += portata.getPrice();
+            }
+        }
+        prezzo = prezzoAntipasti / Antipasti.getCounterAntipasti() +
+                 prezzoPrimoPiatto / PrimoPiatto.getCounterPrimoPiatto() +
+                 prezzoSecondoPiatto / SecondiPiatti.getCounterSecondoPiatto() +
+                 prezzoDolci / Dolci.getCounterDolci() +
+                 prezzoBevande / Bevande.getCounterBevande();
+        return prezzo;
     }
 }

@@ -39,7 +39,7 @@ public class Main {
         List<Menu> list1=new ArrayList<>();
         list1.add(menu);
 
-       Ristorante ristorante= new Ristorante("Pippolandia", list1,"Rinomato ristorante pluripremiato, per tutti i plati",4,"Via vatteneapesca, 13", 25);
+       Ristorante ristorante= new Ristorante("Pippolandia", list1,"Rinomato ristorante pluripremiato, per tutti i plati",4,"Via vatteneapesca, 13");
        ristorante.printRistorante();
 
 
