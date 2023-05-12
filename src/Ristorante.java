@@ -8,6 +8,9 @@ public class Ristorante {
     private String address;
     private double mediumPrice;
 
+    //TODO inserire la capienza massima, una mappa che prende tavalo e cliente e un metodo per prenotare e quello che vi serve
+    //TODO controllo per non andare in sopra prenotazioni
+
 
     public Ristorante(String name, List<Menu> menuList, String description, int stelleMichelin, String address) {
         this.name = name;
@@ -42,6 +45,7 @@ public class Ristorante {
         this.mediumPrice = mediumPrice;
     }
 
+    //TODO non è disponibile il menù
     public void printRistorante(Cliente cliente) {
         System.out.println("Ristrante " + name + " " + stelleMichelin + " Stelle Michelin\nPrezzo Medio " + mediumPrice + " €\n" + description + "\nSito in " + address + "\n");
         for (Menu menu : menuList) {
