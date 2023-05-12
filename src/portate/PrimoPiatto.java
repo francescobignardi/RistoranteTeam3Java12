@@ -30,7 +30,9 @@ public class PrimoPiatto extends Portata {
         isGlutenFree = glutenFree;
     }
 
-    public static int getCounterPrimoPiatto(){return counterPrimoPiatto;}
+    public static int getCounterPrimoPiatto() {
+        return counterPrimoPiatto;
+    }
 
     @Override
     public void print() {

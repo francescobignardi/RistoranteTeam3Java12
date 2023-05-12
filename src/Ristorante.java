@@ -21,12 +21,15 @@ public class Ristorante {
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
+
     public List<Menu> getMenuList() {
         return menuList;
     }
+
     public void setMenuList(List<Menu> menuList) {
         this.menuList = menuList;
     }
@@ -39,12 +42,11 @@ public class Ristorante {
         this.mediumPrice = mediumPrice;
     }
 
-    //TODO stiamo stampando tutti i menu invece a noi serve di dare un menù al cliente del tipo uguale al cliente
-    public void printRistorante(Cliente cliente){
-        System.out.println("Ristrante "+name+" "+stelleMichelin+" Stelle Michelin\nPrezzo Medio "+mediumPrice+" €\n"+description+"\nSito in "+address+"\n");
-        for (Menu menu:menuList){
-            if(cliente.getTipo()==menu.getMenuType()){
-            menu.print();
+    public void printRistorante(Cliente cliente) {
+        System.out.println("Ristrante " + name + " " + stelleMichelin + " Stelle Michelin\nPrezzo Medio " + mediumPrice + " €\n" + description + "\nSito in " + address + "\n");
+        for (Menu menu : menuList) {
+            if (cliente.getTipo() == menu.getMenuType()) {
+                menu.print();
             }
         }
     }

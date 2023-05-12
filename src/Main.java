@@ -36,11 +36,11 @@ public class Main {
         menu.addPortata(new Dolci("Zeppole", 2.50, false, false));
         menu.addPortata(new Dolci("Pastiera", 5.00, false, false));
         menu.addPortata(new Dolci("Sfogliatella", 4.50, false, false));
-        List<Menu> list1=new ArrayList<>();
+        List<Menu> list1 = new ArrayList<>();
         list1.add(menu);
 
-       Ristorante ristorante= new Ristorante("B12", list1,"Rinomato ristorante pluripremiato, per tutti i palati",4,"Via Roma, 13");
-       Cliente cliente1= new Cliente("Gabriele", "", "","", 24, TypeEnum.CARNIVORO);
-       ristorante.printRistorante(cliente1);
+        Ristorante ristorante = new Ristorante("B12", list1, "Rinomato ristorante pluripremiato, per tutti i palati", 4, "Via Roma, 13");
+        Cliente cliente1 = new Cliente("Gabriele", "", "", "", 24, TypeEnum.CARNIVORO);
+        ristorante.printRistorante(cliente1);
     }
 }

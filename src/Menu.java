@@ -43,15 +43,15 @@ public class Menu {
     }
 
     public void print() {
-        System.out.println("\n"+ColoriAnsiEnum.BACKGROUND_GREEN.getColorCode() + "Antipasti" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
+        System.out.println("\n" + ColoriAnsiEnum.BACKGROUND_GREEN.getColorCode() + "Antipasti" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
         portataList.stream().filter(antipasto -> antipasto instanceof Antipasti).forEach(Portata::print);
-        System.out.println("\n"+ColoriAnsiEnum.BACKGROUND_GREEN.getColorCode() + "Primi piatti" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
+        System.out.println("\n" + ColoriAnsiEnum.BACKGROUND_GREEN.getColorCode() + "Primi piatti" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
         portataList.stream().filter(primo -> primo instanceof PrimoPiatto).forEach(Portata::print);
-        System.out.println("\n"+ColoriAnsiEnum.BACKGROUND_GREEN.getColorCode() + "Secondi piatti" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
+        System.out.println("\n" + ColoriAnsiEnum.BACKGROUND_GREEN.getColorCode() + "Secondi piatti" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
         portataList.stream().filter(secondo -> secondo instanceof SecondiPiatti).forEach(Portata::print);
-        System.out.println("\n"+ColoriAnsiEnum.BACKGROUND_GREEN.getColorCode() + "Dolci" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
+        System.out.println("\n" + ColoriAnsiEnum.BACKGROUND_GREEN.getColorCode() + "Dolci" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
         portataList.stream().filter(dolce -> dolce instanceof Dolci).forEach(Portata::print);
-        System.out.println("\n"+ColoriAnsiEnum.BACKGROUND_GREEN.getColorCode() + "Bevande" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
+        System.out.println("\n" + ColoriAnsiEnum.BACKGROUND_GREEN.getColorCode() + "Bevande" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
         portataList.stream().filter(bevanda -> bevanda instanceof Bevande).forEach(Portata::print);
     }
 
@@ -88,10 +88,10 @@ public class Menu {
             }
         }
         prezzo = prezzoAntipasti / Antipasti.getCounterAntipasti() +
-                 prezzoPrimoPiatto / PrimoPiatto.getCounterPrimoPiatto() +
-                 prezzoSecondoPiatto / SecondiPiatti.getCounterSecondoPiatto() +
-                 prezzoDolci / Dolci.getCounterDolci() +
-                 prezzoBevande / Bevande.getCounterBevande();
+                prezzoPrimoPiatto / PrimoPiatto.getCounterPrimoPiatto() +
+                prezzoSecondoPiatto / SecondiPiatti.getCounterSecondoPiatto() +
+                prezzoDolci / Dolci.getCounterDolci() +
+                prezzoBevande / Bevande.getCounterBevande();
         return prezzo;
     }
 }

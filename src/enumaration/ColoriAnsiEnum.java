@@ -24,7 +24,6 @@ public enum ColoriAnsiEnum {
     ANSI_WHITE("\u001B[37m"),
     ANSI_RESET("\u001B[0m");
 
-
     private final String color;
 
     ColoriAnsiEnum(String colorCode) {

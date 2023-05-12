@@ -11,7 +11,6 @@ public abstract class Portata {
         this.price = price;
     }
 
-
     public String getName() {
         return name;
     }
@@ -27,7 +26,6 @@ public abstract class Portata {
     public void setPrice(double price) {
         this.price = price;
     }
-
 
     public void print() {
         System.out.println(ColoriAnsiEnum.ANSI_BLACK.getColorCode() + name + " €" + price + ColoriAnsiEnum.ANSI_RESET.getColorCode());

@@ -9,24 +9,30 @@ public class Antipasti extends Portata {
 
     public Antipasti(String name, double price, boolean isCold, boolean isFried) {
         super(name, price);
-        this.isCold=isCold;
-        this.isFried=isFried;
+        this.isCold = isCold;
+        this.isFried = isFried;
         counterAntipasti += 1;
     }
 
     public boolean isCold() {
         return isCold;
     }
+
     public void setCold(boolean cold) {
         isCold = cold;
     }
+
     public boolean isFried() {
         return isFried;
     }
+
     public void setFried(boolean fried) {
         isFried = fried;
     }
-    public static int getCounterAntipasti(){return counterAntipasti;}
+
+    public static int getCounterAntipasti() {
+        return counterAntipasti;
+    }
 
     @Override
     public void print() {

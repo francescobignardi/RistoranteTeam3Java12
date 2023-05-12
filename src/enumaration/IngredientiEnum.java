@@ -26,6 +26,4 @@ public enum IngredientiEnum {
     ZUCCHERO,
     RUM,
     CARAMELLO,
-
-
 }
