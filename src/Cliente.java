@@ -3,14 +3,16 @@ import enumaration.TypeEnum;
 public class Cliente {
 
     private String name;
+    private String surname;
     private String address;
     private String telephoneNumber;
     private String eMail;
     private int age;
     private TypeEnum tipo;
 
-    public Cliente(String name, String address, String telephoneNumber, String eMail, int age, TypeEnum tipo) {
+    public Cliente(String name, String surname, String address, String telephoneNumber, String eMail, int age, TypeEnum tipo) {
         this.name = name;
+        this.surname = surname;
         this.address = address;
         this.telephoneNumber = telephoneNumber;
         this.eMail = eMail;
@@ -24,6 +26,14 @@ public class Cliente {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
     public String getAddress() {
@@ -65,4 +75,6 @@ public class Cliente {
     public void setTipo(TypeEnum alimentazione) {
         this.tipo = tipo;
     }
+
+
 }

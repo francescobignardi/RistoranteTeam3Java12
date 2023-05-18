@@ -39,8 +39,13 @@ public class Main {
         List<Menu> list1 = new ArrayList<>();
         list1.add(menu);
 
-        Ristorante ristorante = new Ristorante("B12", list1, "Rinomato ristorante pluripremiato, per tutti i palati", 4, "Via Roma, 13");
-        Cliente cliente1 = new Cliente("Gabriele", "", "", "", 24, TypeEnum.PESCETARIANO);
+        Ristorante ristorante = new Ristorante("B12", list1, "Rinomato ristorante pluripremiato, per tutti i palati", 4, "Via Roma, 13", 100, 20);
+        Cliente cliente1 = new Cliente("Gabriele", "Ingrassia", "", "","", 24, TypeEnum.CARNIVORO);
+        Cliente cliente2 = new Cliente("Pippo", "Pluto", "", "","", 24, TypeEnum.CARNIVORO);
+
+        ristorante.prenota(cliente2, 4);
         ristorante.printRistorante(cliente1);
+        ristorante.checkPrenotazioni();
+
     }
 }
