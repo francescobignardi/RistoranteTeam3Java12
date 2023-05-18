@@ -45,7 +45,7 @@ public class Main {
 
         ristorante.prenota(cliente2, 4);
         ristorante.printRistorante(cliente1);
-        ristorante.checkPrenotazioni();
+
 
     }
 }
