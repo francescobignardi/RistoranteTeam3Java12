@@ -3,12 +3,15 @@ package portate;
 import enumaration.ColoriAnsiEnum;
 
 public class PrimoPiatto extends Portata {
+
+    private boolean isOutMenu;
     private boolean isIntegral;
     private boolean isGlutenFree;
     private static int counterPrimoPiatto = 0;
 
-    public PrimoPiatto(String name, double price, boolean isIntegral, boolean isGlutenFree) {
+    public PrimoPiatto(String name, double price, boolean isOutMenu, boolean isIntegral, boolean isGlutenFree) {
         super(name, price);
+        this.isOutMenu=isOutMenu;
         this.isIntegral = isIntegral;
         this.isGlutenFree = isGlutenFree;
         counterPrimoPiatto += 1;
@@ -37,6 +40,11 @@ public class PrimoPiatto extends Portata {
     @Override
     public void print() {
         super.print();
+        if (isOutMenu) {
+            System.out.println(ColoriAnsiEnum.ANSI_GREEN.getColorCode() + "è fuori dal menu'" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
+        } else {
+            System.out.println(ColoriAnsiEnum.ANSI_RED.getColorCode() + "non è fuori dal menu'" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
+        }
         if (isIntegral) {
             System.out.println(ColoriAnsiEnum.ANSI_GREEN.getColorCode() + "è integrale" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
         } else {

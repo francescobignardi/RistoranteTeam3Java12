@@ -97,6 +97,8 @@ public class Ristorante {
         for (Menu menu : menuList) {
             if (cliente.getTipo() == menu.getMenuType()) {
                 menu.print();
+            }else {
+                System.out.println("non e' disponibile il menu' da te richiesto");
             }
         }
     }

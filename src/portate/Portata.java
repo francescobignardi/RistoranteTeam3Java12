@@ -3,6 +3,7 @@ package portate;
 import enumaration.*;
 
 public abstract class Portata {
+
     private String name;
     private double price;
 

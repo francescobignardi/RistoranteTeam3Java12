@@ -3,12 +3,15 @@ package portate;
 import enumaration.ColoriAnsiEnum;
 
 public class Dolci extends Portata {
+
+    private boolean isOutMenu;
     private boolean isSugarFree;
     private boolean isLactoseFree;
     private static int counterDolci = 0;
 
-    public Dolci(String name, double price, boolean isLactoseFree, boolean isSugarFree) {
+    public Dolci(String name, double price,boolean isOutMenu, boolean isLactoseFree, boolean isSugarFree) {
         super(name, price);
+        this.isOutMenu=isOutMenu;
         this.isLactoseFree = isLactoseFree;
         this.isSugarFree = isSugarFree;
         counterDolci += 1;
@@ -37,6 +40,11 @@ public class Dolci extends Portata {
     @Override
     public void print() {
         super.print();
+        if (isOutMenu) {
+            System.out.println(ColoriAnsiEnum.ANSI_GREEN.getColorCode() + "è fuori dal menu'" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
+        } else {
+            System.out.println(ColoriAnsiEnum.ANSI_RED.getColorCode() + "non è fuori dal menu'" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
+        }
         if (isSugarFree) {
             System.out.println(ColoriAnsiEnum.ANSI_GREEN.getColorCode() + "è senza zucchero'" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
         } else {

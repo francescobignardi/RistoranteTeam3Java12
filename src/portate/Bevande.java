@@ -3,17 +3,22 @@ package portate;
 import enumaration.ColoriAnsiEnum;
 
 public class Bevande extends Portata {
+
+
+
+    private boolean isOutMenu;
     private boolean isCold;
     private boolean isHomeMade;
     private boolean isAlcoholic;
     private static int counterBevande = 0;
 
-    public Bevande(String name, double price, boolean isCold, boolean isHomeMade, boolean isAlcoholic) {
+    public Bevande(String name, double price, boolean isOutMenu, boolean isCold, boolean isHomeMade, boolean isAlcoholic) {
         super(name, price);
+        this.isOutMenu = isOutMenu;
         this.isCold = isCold;
         this.isHomeMade = isHomeMade;
         this.isAlcoholic = isAlcoholic;
-        counterBevande += 1;
+        counterBevande+=1;
     }
 
     public boolean isCold() {
@@ -39,6 +44,11 @@ public class Bevande extends Portata {
     @Override
     public void print() {
         super.print();
+        if (isOutMenu) {
+            System.out.println(ColoriAnsiEnum.ANSI_GREEN.getColorCode() + "è fuori dal menu'" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
+        } else {
+            System.out.println(ColoriAnsiEnum.ANSI_RED.getColorCode() + "non è fuori dal menu'" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
+        }
         if (isCold) {
             System.out.println(ColoriAnsiEnum.ANSI_GREEN.getColorCode() + "è freddo" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
         } else {
