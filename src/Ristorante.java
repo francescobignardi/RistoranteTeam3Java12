@@ -124,6 +124,7 @@ public class Ristorante {
         return tavoliOccupati <= MAX_NUMERO_TAVOLI && copertiOccupati <= MAX_NUMERO_COPERTI;
     }
 
+    // TODO: 19/05/2023 il numero persone va passato  
     public void prenota(Cliente cliente, int numeroPersone) {
         Tavolo tavolo = new Tavolo(numeroPersone);
         if (controlloDisponibilita(tavolo)) {

@@ -1,7 +1,8 @@
 public class Tavolo {
+    //TODO tutti le variabili devono essere wrapper
     private int coperti;
     private int numeroTavoli;
-
+    //todo da rivedere.
     public Tavolo(int coperti) {
         this.coperti = coperti;
         if (coperti <= 4) {

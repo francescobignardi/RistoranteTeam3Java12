@@ -72,9 +72,11 @@ public class Main {
         Cliente cliente1 = new Cliente("Gabriele", "", "", "","", 24, TypeEnum.CARNIVORO);
         Cliente cliente2 = new Cliente("Raffaele", "", "", "","", 20, TypeEnum.VEGETARIANO);
 
-        ristorante.printRistorante(cliente1);
+        ristorante.printRistorante(cliente2);
 
         ristorante.prenota(cliente2, 12);
+        ristorante.prenota(cliente2, 15);
+        ristorante.prenota(cliente1, 25);
         ristorante.checkPrenotazioni();
     }
 }
