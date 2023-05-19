@@ -29,6 +29,6 @@ public abstract class Portata {
     }
 
     public void print() {
-        System.out.println(ColoriAnsiEnum.ANSI_BLACK.getColorCode() + name + " €" + price + ColoriAnsiEnum.ANSI_RESET.getColorCode());
+        System.out.print(ColoriAnsiEnum.ANSI_YELLOW.getColorCode() + name + " €" + price + "    " + ColoriAnsiEnum.ANSI_RESET.getColorCode());
     }
 }

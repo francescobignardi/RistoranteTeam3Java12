@@ -35,19 +35,19 @@ public class Antipasti extends Portata {
     public void print() {
         super.print();
         if (isOutMenu) {
-            System.out.println(ColoriAnsiEnum.ANSI_GREEN.getColorCode() + "è fuori dal menu'" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
+            System.out.print(ColoriAnsiEnum.ANSI_GREEN.getColorCode() + "(È fuori dal menu, " + ColoriAnsiEnum.ANSI_RESET.getColorCode());
         } else {
-            System.out.println(ColoriAnsiEnum.ANSI_RED.getColorCode() + "non è fuori dal menu'" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
+            System.out.print(ColoriAnsiEnum.ANSI_BLUE.getColorCode() + "(Non è fuori dal menu, " + ColoriAnsiEnum.ANSI_RESET.getColorCode());
         }
         if (isCold) {
-            System.out.println(ColoriAnsiEnum.ANSI_GREEN.getColorCode() + "è freddo" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
+            System.out.print(ColoriAnsiEnum.ANSI_GREEN.getColorCode() + "è freddo, " + ColoriAnsiEnum.ANSI_RESET.getColorCode());
         } else {
-            System.out.println(ColoriAnsiEnum.ANSI_RED.getColorCode() + "non è freddo" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
+            System.out.print(ColoriAnsiEnum.ANSI_BLUE.getColorCode() + "non è freddo, " + ColoriAnsiEnum.ANSI_RESET.getColorCode());
         }
         if (isFried) {
-            System.out.println(ColoriAnsiEnum.ANSI_GREEN.getColorCode() + "è fritto " + ColoriAnsiEnum.ANSI_RESET.getColorCode());
+            System.out.println(ColoriAnsiEnum.ANSI_GREEN.getColorCode() + "è fritto.)" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
         } else {
-            System.out.println(ColoriAnsiEnum.ANSI_RED.getColorCode() + "non è fritto" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
+            System.out.println(ColoriAnsiEnum.ANSI_BLUE.getColorCode() + "non è fritto.)" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
         }
     }
 }
