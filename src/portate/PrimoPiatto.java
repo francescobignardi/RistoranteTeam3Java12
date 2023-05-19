@@ -41,19 +41,19 @@ public class PrimoPiatto extends Portata {
     public void print() {
         super.print();
         if (isOutMenu) {
-            System.out.println(ColoriAnsiEnum.ANSI_GREEN.getColorCode() + "è fuori dal menu'" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
+            System.out.print(ColoriAnsiEnum.ANSI_GREEN.getColorCode() + "(È fuori dal menu, " + ColoriAnsiEnum.ANSI_RESET.getColorCode());
         } else {
-            System.out.println(ColoriAnsiEnum.ANSI_RED.getColorCode() + "non è fuori dal menu'" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
+            System.out.print(ColoriAnsiEnum.ANSI_BLUE.getColorCode() + "(Non è fuori dal menu, " + ColoriAnsiEnum.ANSI_RESET.getColorCode());
         }
         if (isIntegral) {
-            System.out.println(ColoriAnsiEnum.ANSI_GREEN.getColorCode() + "è integrale" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
+            System.out.print(ColoriAnsiEnum.ANSI_GREEN.getColorCode() + "è integrale, " + ColoriAnsiEnum.ANSI_RESET.getColorCode());
         } else {
-            System.out.println(ColoriAnsiEnum.ANSI_RED.getColorCode() + "non è integrale" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
+            System.out.print(ColoriAnsiEnum.ANSI_BLUE.getColorCode() + "non è integrale, " + ColoriAnsiEnum.ANSI_RESET.getColorCode());
         }
         if (isGlutenFree) {
-            System.out.println(ColoriAnsiEnum.ANSI_GREEN.getColorCode() + "contiene glutine" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
+            System.out.println(ColoriAnsiEnum.ANSI_GREEN.getColorCode() + "contiene glutine.)" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
         } else {
-            System.out.println(ColoriAnsiEnum.ANSI_RED.getColorCode() + "non contiene glutine" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
+            System.out.println(ColoriAnsiEnum.ANSI_BLUE.getColorCode() + "non contiene glutine.)" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
         }
     }
 }
