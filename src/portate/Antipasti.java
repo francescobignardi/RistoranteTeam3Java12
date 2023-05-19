@@ -7,14 +7,12 @@ public class Antipasti extends Portata {
     private boolean isOutMenu;
     private boolean isCold;
     private boolean isFried;
-    private static int counterAntipasti = 0;
 
     public Antipasti(String name, double price, boolean isOutMenu, boolean isCold, boolean isFried) {
         super(name, price);
         this.isOutMenu = isOutMenu;
         this.isCold = isCold;
         this.isFried = isFried;
-        counterAntipasti += 1;
     }
 
     public boolean isCold() {
@@ -31,10 +29,6 @@ public class Antipasti extends Portata {
 
     public void setFried(boolean fried) {
         isFried = fried;
-    }
-
-    public static int getCounterAntipasti() {
-        return counterAntipasti;
     }
 
     @Override

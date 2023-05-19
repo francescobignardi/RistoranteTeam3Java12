@@ -7,14 +7,12 @@ public class Dolci extends Portata {
     private boolean isOutMenu;
     private boolean isSugarFree;
     private boolean isLactoseFree;
-    private static int counterDolci = 0;
 
     public Dolci(String name, double price,boolean isOutMenu, boolean isLactoseFree, boolean isSugarFree) {
         super(name, price);
         this.isOutMenu=isOutMenu;
         this.isLactoseFree = isLactoseFree;
         this.isSugarFree = isSugarFree;
-        counterDolci += 1;
     }
 
     public boolean isSugarFree() {
@@ -31,10 +29,6 @@ public class Dolci extends Portata {
 
     public void setLactoseFree(boolean lactoseFree) {
         isLactoseFree = lactoseFree;
-    }
-
-    public static int getCounterDolci() {
-        return counterDolci;
     }
 
     @Override

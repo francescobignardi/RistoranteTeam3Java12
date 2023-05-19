@@ -1,4 +1,5 @@
-import java.security.KeyStore;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,16 +16,24 @@ public class Ristorante {
     private Map<Cliente, Tavolo> prenotazioni;
 
 
-    public Ristorante(String name, List<Menu> menuList, String description, int stelleMichelin, String address, int MAX_NUMERO_COPERTI, int MAX_NUMERO_TAVOLI) {
+    public Ristorante(String name, String description, int stelleMichelin, String address, int MAX_NUMERO_COPERTI, int MAX_NUMERO_TAVOLI, List<Menu> menuList) {
         this.name = name;
-        this.menuList = menuList;
         this.description = description;
         this.stelleMichelin = stelleMichelin;
         this.address = address;
         this.MAX_NUMERO_COPERTI = MAX_NUMERO_COPERTI;
         this.MAX_NUMERO_TAVOLI = MAX_NUMERO_TAVOLI;
-        this.mediumPrice = Menu.prezzoMedio();
         this.prenotazioni = new HashMap<>();
+        this.menuList = menuList;
+        this.mediumPrice=prezzoMedioRistorante();
+    }
+
+    private double prezzoMedioRistorante() {
+        double prezzo = 0;
+        for (Menu menu:menuList){
+            prezzo+=menu.getPrezzoMedioMenu();
+        }
+        return prezzo / menuList.size();
     }
 
     public String getName() {
@@ -94,16 +103,17 @@ public class Ristorante {
 
     public void printRistorante(Cliente cliente) {
         System.out.println("Ristrante " + name + " " + stelleMichelin + " Stelle Michelin\nPrezzo Medio " + mediumPrice + " €\n" + description + "\nSito in " + address + "\n");
-        for (Menu menu : menuList) {
-            if (cliente.getTipo() == menu.getMenuType()) {
-                menu.print();
-            }else {
-                System.out.println("non e' disponibile il menu' da te richiesto");
-            }
-        }
+        menuList.stream().filter(n->n.getMenuType()==cliente.getTipo()).forEach(Menu::print);
+//        for (Menu menu : menuList) {
+//            if (menu.getMenuType() == cliente.getTipo()) {
+//                menu.print();
+//            }
+//        }
     }
 
-
+    public void addMenu(Menu menu){
+        this.menuList.add(menu);
+    }
     public boolean controlloDisponibilita(Tavolo tavolo) {
         int tavoliOccupati = tavolo.getNumeroTavoli();
         int copertiOccupati = tavolo.getCoperti();
@@ -115,7 +125,7 @@ public class Ristorante {
     }
 
     public void prenota(Cliente cliente, int numeroPersone) {
-            Tavolo tavolo = new Tavolo(numeroPersone);
+        Tavolo tavolo = new Tavolo(numeroPersone);
         if (controlloDisponibilita(tavolo)) {
             prenotazioni.put(cliente, tavolo);
         } else {

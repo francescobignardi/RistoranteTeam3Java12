@@ -56,16 +56,25 @@ public class Main {
         menuVegetariano.addPortata(new Dolci("Pastiera", 5.00,false, false, false));
         menuVegetariano.addPortata(new Dolci("Sfogliatella", 4.50,false, false, false));
 
-        List<Menu> list1 = new ArrayList<>();
-        list1.add(menu);
-        list1.add(menuVegetariano);
 
 
-        Ristorante ristorante = new Ristorante("B12", list1, "Rinomato ristorante pluripremiato, per tutti i palati", 4, "Via Roma, 13",10,10);
+        List<Menu> list= new ArrayList<>(List.of(menu, menuVegetariano));
+
+
+
+        Ristorante ristorante = new Ristorante("B12", "Rinomato ristorante pluripremiato, per tutti i palati", 4, "Via Roma, 13",100,25, list);
+
+
+
+
+
+
         Cliente cliente1 = new Cliente("Gabriele", "", "", "","", 24, TypeEnum.CARNIVORO);
-        Ristorante ristoranteVegetariano = new Ristorante("B12", list1, "Rinomato ristorante pluripremiato, per tutti i palati vegetariani", 4, "Via Roma, 13",10,10);
         Cliente cliente2 = new Cliente("Raffaele", "", "", "","", 20, TypeEnum.VEGETARIANO);
-//        ristorante.printRistorante(cliente1);
-        ristoranteVegetariano.printRistorante(cliente2);
+
+        ristorante.printRistorante(cliente1);
+
+        ristorante.prenota(cliente2, 12);
+        ristorante.checkPrenotazioni();
     }
 }

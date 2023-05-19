@@ -10,7 +10,6 @@ public class Bevande extends Portata {
     private boolean isCold;
     private boolean isHomeMade;
     private boolean isAlcoholic;
-    private static int counterBevande = 0;
 
     public Bevande(String name, double price, boolean isOutMenu, boolean isCold, boolean isHomeMade, boolean isAlcoholic) {
         super(name, price);
@@ -18,7 +17,6 @@ public class Bevande extends Portata {
         this.isCold = isCold;
         this.isHomeMade = isHomeMade;
         this.isAlcoholic = isAlcoholic;
-        counterBevande+=1;
     }
 
     public boolean isCold() {
@@ -35,10 +33,6 @@ public class Bevande extends Portata {
 
     public void setHomeMade(boolean homeMade) {
         isHomeMade = homeMade;
-    }
-
-    public static int getCounterBevande() {
-        return counterBevande;
     }
 
     @Override
