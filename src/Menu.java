@@ -10,7 +10,7 @@ public class Menu {
     private String name;
     private String chef;
     private Set<Portata> portataList;
-    private double prezzoMedioMenu;
+    private Double prezzoMedioMenu;
 
     public Menu(String name, String chef, TypeEnum menuType) {
         this.name = name;
@@ -52,11 +52,11 @@ public class Menu {
         this.portataList = portataList;
     }
 
-    public double getPrezzoMedioMenu() {
+    public Double getPrezzoMedioMenu() {
         return prezzoMedioMenu;
     }
 
-    public void setPrezzoMedioMenu(double prezzoMedioMenu) {
+    public void setPrezzoMedioMenu(Double prezzoMedioMenu) {
         this.prezzoMedioMenu = prezzoMedioMenu;
     }
 
@@ -83,18 +83,18 @@ public class Menu {
         this.prezzoMedioMenu = prezzoMedio();
     }
 
-    public double prezzoMedio() {
-        double prezzo =0;
-        double prezzoAntipasti = 0;
-        double countA = 0;
-        double prezzoPrimoPiatto = 0;
-        double countP = 0;
-        double prezzoSecondoPiatto = 0;
-        double countS = 0;
-        double prezzoDolci = 0;
-        double countD = 0;
-        double prezzoBevande = 0;
-        double countB = 0;
+    public Double prezzoMedio() {
+        Double prezzo = 0.0;
+        Double prezzoAntipasti = 0.0;
+        Double countA = 0.0;
+        Double prezzoPrimoPiatto = 0.0;
+        Double countP = 0.0;
+        Double prezzoSecondoPiatto = 0.0;
+        Double countS = 0.0;
+        Double prezzoDolci = 0.0;
+        Double countD = 0.0;
+        Double prezzoBevande = 0.0;
+        Double countB = 0.0;
         for (Portata portata : portataList) {
             if (portata instanceof Antipasti) {
                 prezzoAntipasti += portata.getPrice();

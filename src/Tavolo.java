@@ -1,9 +1,9 @@
 public class Tavolo {
     //TODO tutti le variabili devono essere wrapper
-    private int coperti;
-    private int numeroTavoli;
+    private Integer coperti;
+    private Integer numeroTavoli;
     //todo da rivedere.
-    public Tavolo(int coperti) {
+    public Tavolo(Integer coperti) {
         this.coperti = coperti;
         if (coperti <= 4) {
             this.numeroTavoli = 1;
@@ -12,19 +12,19 @@ public class Tavolo {
         }
     }
 
-    public int getCoperti() {
+    public Integer getCoperti() {
         return coperti;
     }
 
-    public void setCoperti(int coperti) {
+    public void setCoperti(Integer coperti) {
         this.coperti = coperti;
     }
 
-    public int getNumeroTavoli() {
+    public Integer getNumeroTavoli() {
         return numeroTavoli;
     }
 
-    public void setQuantitaTavoli(int quantitaTavoli) {
+    public void setQuantitaTavoli(Integer quantitaTavoli) {
         this.numeroTavoli = quantitaTavoli;
     }
 }

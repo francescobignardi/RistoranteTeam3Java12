@@ -42,7 +42,7 @@ public class Main {
 
         menuVegetariano.addPortata(new Antipasti("Patatine vegetariane", 5.00, false, false, true));
 
-        menuVegetariano.addPortata(new SecondiPiatti("tagliere di formaggi", 19, false, true));
+        menuVegetariano.addPortata(new SecondiPiatti("tagliere di formaggi", 19.00, false, true));
 
         menuVegetariano.addPortata(new Bevande("Acqua naturale", 2.00,false, false, false, true));
         menuVegetariano.addPortata(new Bevande("Acqua frizzante", 2.00,false, false, false, true));

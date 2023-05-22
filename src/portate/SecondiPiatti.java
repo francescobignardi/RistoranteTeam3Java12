@@ -6,7 +6,7 @@ public class SecondiPiatti extends Portata {
     private boolean isOutMenu;
     private boolean hasSideDish;
 
-    public SecondiPiatti(String name, double price, boolean isOutMenu, boolean hasSideDish) {
+    public SecondiPiatti(String name, Double price, boolean isOutMenu, boolean hasSideDish) {
         super(name, price);
         this.hasSideDish = hasSideDish;
         this.isOutMenu = isOutMenu;

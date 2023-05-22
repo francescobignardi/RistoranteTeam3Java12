@@ -11,7 +11,7 @@ public class Bevande extends Portata {
     private boolean isHomeMade;
     private boolean isAlcoholic;
 
-    public Bevande(String name, double price, boolean isOutMenu, boolean isCold, boolean isHomeMade, boolean isAlcoholic) {
+    public Bevande(String name, Double price, boolean isOutMenu, boolean isCold, boolean isHomeMade, boolean isAlcoholic) {
         super(name, price);
         this.isOutMenu = isOutMenu;
         this.isCold = isCold;

@@ -8,7 +8,7 @@ public class Antipasti extends Portata {
     private boolean isCold;
     private boolean isFried;
 
-    public Antipasti(String name, double price, boolean isOutMenu, boolean isCold, boolean isFried) {
+    public Antipasti(String name, Double price, boolean isOutMenu, boolean isCold, boolean isFried) {
         super(name, price);
         this.isOutMenu = isOutMenu;
         this.isCold = isCold;

@@ -8,15 +8,15 @@ public class Ristorante {
     private String name;
     private List<Menu> menuList;
     private String description;
-    private int stelleMichelin;
+    private Integer stelleMichelin;
     private String address;
-    private double mediumPrice;
-    private final int MAX_NUMERO_COPERTI;
-    private final int MAX_NUMERO_TAVOLI;
+    private Double mediumPrice;
+    private final Integer MAX_NUMERO_COPERTI;
+    private final Integer MAX_NUMERO_TAVOLI;
     private Map<Cliente, Tavolo> prenotazioni;
 
 
-    public Ristorante(String name, String description, int stelleMichelin, String address, int MAX_NUMERO_COPERTI, int MAX_NUMERO_TAVOLI, List<Menu> menuList) {
+    public Ristorante(String name, String description, Integer stelleMichelin, String address, Integer MAX_NUMERO_COPERTI, Integer MAX_NUMERO_TAVOLI, List<Menu> menuList) {
         this.name = name;
         this.description = description;
         this.stelleMichelin = stelleMichelin;
@@ -28,8 +28,8 @@ public class Ristorante {
         this.mediumPrice=prezzoMedioRistorante();
     }
 
-    private double prezzoMedioRistorante() {
-        double prezzo = 0;
+    private Double prezzoMedioRistorante() {
+        Double prezzo = 0.0;
         for (Menu menu:menuList){
             prezzo+=menu.getPrezzoMedioMenu();
         }
@@ -52,19 +52,19 @@ public class Ristorante {
         this.menuList = menuList;
     }
 
-    public double getMediumPrice() {
+    public Double getMediumPrice() {
         return mediumPrice;
     }
 
-    public void setMediumPrice(double mediumPrice) {
+    public void setMediumPrice(Double mediumPrice) {
         this.mediumPrice = mediumPrice;
     }
 
-    public int getMAX_NUMERO_COPERTI() {
+    public Integer getMAX_NUMERO_COPERTI() {
         return MAX_NUMERO_COPERTI;
     }
 
-    public int getMAX_NUMERO_TAVOLI() {
+    public Integer getMAX_NUMERO_TAVOLI() {
         return MAX_NUMERO_TAVOLI;
     }
 
@@ -84,11 +84,11 @@ public class Ristorante {
         this.description = description;
     }
 
-    public int getStelleMichelin() {
+    public Integer getStelleMichelin() {
         return stelleMichelin;
     }
 
-    public void setStelleMichelin(int stelleMichelin) {
+    public void setStelleMichelin(Integer stelleMichelin) {
         this.stelleMichelin = stelleMichelin;
     }
 
@@ -115,8 +115,8 @@ public class Ristorante {
         this.menuList.add(menu);
     }
     public boolean controlloDisponibilita(Tavolo tavolo) {
-        int tavoliOccupati = tavolo.getNumeroTavoli();
-        int copertiOccupati = tavolo.getCoperti();
+        Integer tavoliOccupati = tavolo.getNumeroTavoli();
+        Integer copertiOccupati = tavolo.getCoperti();
         for (Map.Entry<Cliente, Tavolo> check : prenotazioni.entrySet()) {
             tavoliOccupati += check.getValue().getNumeroTavoli();
             copertiOccupati += check.getValue().getCoperti();
@@ -125,7 +125,7 @@ public class Ristorante {
     }
 
     // TODO: 19/05/2023 il numero persone va passato  
-    public void prenota(Cliente cliente, int numeroPersone) {
+    public void prenota(Cliente cliente, Integer numeroPersone) {
         Tavolo tavolo = new Tavolo(numeroPersone);
         if (controlloDisponibilita(tavolo)) {
             prenotazioni.put(cliente, tavolo);

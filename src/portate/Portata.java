@@ -5,9 +5,9 @@ import enumaration.*;
 public abstract class Portata {
 
     private String name;
-    private double price;
+    private Double price;
 
-    public Portata(String name, double price) {
+    public Portata(String name, Double price) {
         this.name = name;
         this.price = price;
     }
@@ -20,7 +20,7 @@ public abstract class Portata {
         this.name = name;
     }
 
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     }
 

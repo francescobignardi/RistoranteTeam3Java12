@@ -7,10 +7,10 @@ public class Cliente {
     private String address;
     private String telephoneNumber;
     private String eMail;
-    private int age;
+    private Integer age;
     private TypeEnum tipo;
 
-    public Cliente(String name, String surname, String address, String telephoneNumber, String eMail, int age, TypeEnum tipo) {
+    public Cliente(String name, String surname, String address, String telephoneNumber, String eMail, Integer age, TypeEnum tipo) {
         this.name = name;
         this.surname = surname;
         this.address = address;
@@ -60,11 +60,11 @@ public class Cliente {
         this.eMail = eMail;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 
