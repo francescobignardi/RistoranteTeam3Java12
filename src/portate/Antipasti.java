@@ -4,13 +4,11 @@ import enumaration.ColoriAnsiEnum;
 
 public class Antipasti extends Portata {
 
-    private boolean isOutMenu;
     private boolean isCold;
     private boolean isFried;
 
     public Antipasti(String name, Double price, boolean isOutMenu, boolean isCold, boolean isFried) {
-        super(name, price);
-        this.isOutMenu = isOutMenu;
+        super(name, price,isOutMenu);
         this.isCold = isCold;
         this.isFried = isFried;
     }
@@ -34,7 +32,7 @@ public class Antipasti extends Portata {
     @Override
     public void print() {
         super.print();
-        if (isOutMenu) {
+        if (super.isOutMenu()) {
             System.out.print(ColoriAnsiEnum.ANSI_GREEN.getColorCode() + "(È fuori dal menu, " + ColoriAnsiEnum.ANSI_RESET.getColorCode());
         } else {
             System.out.print(ColoriAnsiEnum.ANSI_BLUE.getColorCode() + "(Non è fuori dal menu, " + ColoriAnsiEnum.ANSI_RESET.getColorCode());

@@ -1,6 +1,7 @@
 import enumaration.TypeEnum;
 import portate.*;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,11 +26,11 @@ public class Main {
         menu.addPortata(new SecondiPiatti("Cotoletta alla milanese", 14.00, false, true));
         menu.addPortata(new SecondiPiatti("Cotoletta alla bolognese", 16.00, false, false));
 
-        menu.addPortata(new Bevande("Acqua naturale", 2.00,false, false, false, true));
-        menu.addPortata(new Bevande("Acqua frizzante", 2.00,false, false, false, true));
-        menu.addPortata(new Bevande("Birra", 4.00,false, true, true, false));
-        menu.addPortata(new Bevande("Vino", 8.00,false, true, true, false));
-        menu.addPortata(new Bevande("CocaCola", 3.00,true, false, false, true));
+        menu.addPortata(new Bevande("Acqua naturale", 2.00,false, false, false, false));
+        menu.addPortata(new Bevande("Acqua frizzante", 2.00,false, false, false, false));
+        menu.addPortata(new Bevande("Birra", 4.00,false, true, true, true));
+        menu.addPortata(new Bevande("Vino", 8.00,false, true, true, true));
+        menu.addPortata(new Bevande("CocaCola", 3.00,true, false, false, false));
 
         menu.addPortata(new Dolci("Pannacotta", 3.00,false, false, true));
         menu.addPortata(new Dolci("Baba", 4.00,false, true, false));
@@ -78,5 +79,11 @@ public class Main {
         ristorante.prenota(cliente2, 15);
         ristorante.prenota(cliente1, 25);
         ristorante.checkPrenotazioni();
+        Query query=new Query();
+        try{
+        query.queryCreateTablePrimoPiatto(PrimoPiatto.getQueryCreateTable());
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
     }
 }
