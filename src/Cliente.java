@@ -9,8 +9,9 @@ public class Cliente {
     private String eMail;
     private Integer age;
     private TypeEnum tipo;
+    private Integer numeroPersonePrenotazione;
 
-    public Cliente(String name, String surname, String address, String telephoneNumber, String eMail, Integer age, TypeEnum tipo) {
+    public Cliente(String name, String surname, String address, String telephoneNumber, String eMail, Integer age, TypeEnum tipo, Integer numeroPersonePrenotazione) {
         this.name = name;
         this.surname = surname;
         this.address = address;
@@ -18,6 +19,7 @@ public class Cliente {
         this.eMail = eMail;
         this.age = age;
         this.tipo = tipo;
+        this.numeroPersonePrenotazione = numeroPersonePrenotazione;
     }
 
     public String getName() {
@@ -76,5 +78,11 @@ public class Cliente {
         this.tipo = tipo;
     }
 
+    public Integer getNumeroPersonePrenotazione() {
+        return numeroPersonePrenotazione;
+    }
 
+    public void setNumeroPersonePrenotazione(Integer numeroPersonePrenotazione) {
+        this.numeroPersonePrenotazione = numeroPersonePrenotazione;
+    }
 }

@@ -1,12 +1,9 @@
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class Query {
     //fields per la connessione al database
 
-    private static final String URL = "jdbc:mysql://localhost:3306/";
+    private static final String URL = "jdbc:mysql://localhost:3306/ristorante";
     private static final String USER = "root";
     private static final String PASS = "";
 
@@ -30,6 +27,7 @@ public class Query {
 
         System.out.println("Query eseguita correttamente");
         stmt.close();
+        conn.close();
     }
 
     public void queryCreateTablePrimiPiatti() throws SQLException {
@@ -50,6 +48,7 @@ public class Query {
         System.out.println("Query eseguita correttamente");
 
         stmt.close();
+        conn.close();
     }
 
     public void queryCreateTableSecondiPiatti() throws SQLException {
@@ -69,6 +68,7 @@ public class Query {
         System.out.println("Query eseguita correttamente");
 
         stmt.close();
+        conn.close();
     }
 
     public void queryCreateTableDolci() throws SQLException {
@@ -89,6 +89,7 @@ public class Query {
         stmt.executeUpdate(queryCreate);
 
         stmt.close();
+        conn.close();
     }
 
     public void queryCreateTableBevande() throws SQLException {
@@ -110,8 +111,9 @@ public class Query {
         stmt.executeUpdate(queryCreate);
 
         stmt.close();
+        conn.close();
     }
-
+    //TODO RIFORMATTARE E RIMODULARE CON SWITCH E PreparedStatement
     public void queryInsertIntoAntipasti(String name, Double price, boolean isOutMenu, boolean isCold, boolean isFried) throws SQLException {
 
         Connection conn = DriverManager.getConnection(URL, USER, PASS);
@@ -120,11 +122,13 @@ public class Query {
                 + "insert into Antipasti (name, price, isOutMenu, isCold, isFried) "
                 + "values('"+name+"', "+price+"," +isOutMenu+","+ isCold+","+isFried+");";
 
+
         Statement stmt = conn.createStatement();
         stmt.executeUpdate(queryInsert);
         System.out.println("Query eseguita correttamente");
 
         stmt.close();
+        conn.close();
     }
     public void queryInsertIntoPrimiPiatti(String name, Double price, boolean isOutMenu, boolean isIntegral, boolean isGlutenFree) throws SQLException {
 

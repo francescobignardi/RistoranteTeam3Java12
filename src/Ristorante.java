@@ -11,27 +11,24 @@ public class Ristorante {
     private Integer stelleMichelin;
     private String address;
     private Double mediumPrice;
-    private final Integer MAX_NUMERO_COPERTI;
     private final Integer MAX_NUMERO_TAVOLI;
     private Map<Cliente, Tavolo> prenotazioni;
 
-
-    public Ristorante(String name, String description, Integer stelleMichelin, String address, Integer MAX_NUMERO_COPERTI, Integer MAX_NUMERO_TAVOLI, List<Menu> menuList) {
+    public Ristorante(String name, String description, Integer stelleMichelin, String address, Integer MAX_NUMERO_TAVOLI, List<Menu> menuList) {
         this.name = name;
         this.description = description;
         this.stelleMichelin = stelleMichelin;
         this.address = address;
-        this.MAX_NUMERO_COPERTI = MAX_NUMERO_COPERTI;
         this.MAX_NUMERO_TAVOLI = MAX_NUMERO_TAVOLI;
         this.prenotazioni = new HashMap<>();
         this.menuList = menuList;
-        this.mediumPrice=prezzoMedioRistorante();
+        this.mediumPrice = prezzoMedioRistorante();
     }
 
     private Double prezzoMedioRistorante() {
         Double prezzo = 0.0;
-        for (Menu menu:menuList){
-            prezzo+=menu.getPrezzoMedioMenu();
+        for (Menu menu : menuList) {
+            prezzo += menu.getPrezzoMedioMenu();
         }
         return prezzo / menuList.size();
     }
@@ -58,10 +55,6 @@ public class Ristorante {
 
     public void setMediumPrice(Double mediumPrice) {
         this.mediumPrice = mediumPrice;
-    }
-
-    public Integer getMAX_NUMERO_COPERTI() {
-        return MAX_NUMERO_COPERTI;
     }
 
     public Integer getMAX_NUMERO_TAVOLI() {
@@ -103,31 +96,30 @@ public class Ristorante {
 
     public void printRistorante(Cliente cliente) {
         System.out.println("Ristrante " + name + " " + stelleMichelin + " Stelle Michelin\nPrezzo Medio " + mediumPrice + " €\n" + description + "\nSito in " + address + "\n");
-        menuList.stream().filter(n->n.getMenuType()==cliente.getTipo()).forEach(Menu::print);
-//        for (Menu menu : menuList) {
-//            if (menu.getMenuType() == cliente.getTipo()) {
-//                menu.print();
-//            }
-//        }
+        menuList.stream().filter(n -> n.getMenuType() == cliente.getTipo()).forEach(Menu::print);
     }
 
-    public void addMenu(Menu menu){
+    public void addMenu(Menu menu) {
         this.menuList.add(menu);
     }
-    public boolean controlloDisponibilita(Tavolo tavolo) {
-        Integer tavoliOccupati = tavolo.getNumeroTavoli();
-        Integer copertiOccupati = tavolo.getCoperti();
-        for (Map.Entry<Cliente, Tavolo> check : prenotazioni.entrySet()) {
-            tavoliOccupati += check.getValue().getNumeroTavoli();
-            copertiOccupati += check.getValue().getCoperti();
+
+    public boolean controlloDisponibilita() {
+        int counter = 0;
+        for (Map.Entry<Cliente, Tavolo> prenotazione : prenotazioni.entrySet()) {
+            counter += prenotazione.getValue().getNumeroUnitaTavolo();
         }
-        return tavoliOccupati <= MAX_NUMERO_TAVOLI && copertiOccupati <= MAX_NUMERO_COPERTI;
+        return counter <= MAX_NUMERO_TAVOLI;
     }
 
-    // TODO: 19/05/2023 il numero persone va passato  
-    public void prenota(Cliente cliente, Integer numeroPersone) {
-        Tavolo tavolo = new Tavolo(numeroPersone);
-        if (controlloDisponibilita(tavolo)) {
+    public void prenota(Cliente cliente) {
+        if (controlloDisponibilita()) {
+            int unita = 0;
+            if (cliente.getNumeroPersonePrenotazione() > 4) {
+                unita = (int) Math.ceil(cliente.getNumeroPersonePrenotazione() / 4);
+            } else {
+                unita = 1;
+            }
+            Tavolo tavolo = new Tavolo(cliente.getNumeroPersonePrenotazione(), unita);
             prenotazioni.put(cliente, tavolo);
         } else {
             System.out.println("Mi dispiace, posti esauriti! :(");
@@ -137,8 +129,8 @@ public class Ristorante {
     public void checkPrenotazioni() {
         for (Map.Entry<Cliente, Tavolo> prenotazione : prenotazioni.entrySet()) {
             System.out.println("Il cliente: " + prenotazione.getKey().getName() + " " + prenotazione.getKey().getSurname() +
-                    " ha prenotato per " + prenotazione.getValue().getCoperti() + " presone. " +
-                    "Servono " + prenotazione.getValue().getNumeroTavoli() + " tavoli.");
+                    " ha prenotato per " + prenotazione.getKey().getNumeroPersonePrenotazione() + " presone. " +
+                    "Servono " + prenotazione.getValue().getNumeroUnitaTavolo() + " tavoli.");
         }
     }
 }

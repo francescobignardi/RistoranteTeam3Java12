@@ -63,33 +63,36 @@ public class Main {
 
 
 
-        Ristorante ristorante = new Ristorante("B12", "Rinomato ristorante pluripremiato, per tutti i palati", 4, "Via Roma, 13",100,25, list);
+        Ristorante ristorante = new Ristorante("B12", "Rinomato ristorante pluripremiato, per tutti i palati", 4, "Via Roma, 13",20, list);
 
 
 
 
 
 
-//        Cliente cliente1 = new Cliente("Gabriele", "", "", "","", 24, TypeEnum.CARNIVORO);
-//        Cliente cliente2 = new Cliente("Raffaele", "", "", "","", 20, TypeEnum.VEGETARIANO);
+        Cliente cliente1 = new Cliente("Gabriele", "", "", "","", 24, TypeEnum.CARNIVORO, 30);
+        Cliente cliente2 = new Cliente("Raffaele", "", "", "","", 20, TypeEnum.VEGETARIANO, 10);
+        Cliente cliente3 = new Cliente("Francesco", "", "", "","", 20, TypeEnum.VEGETARIANO, 60);
+        Cliente cliente4 = new Cliente("Pippo", "", "", "","", 20, TypeEnum.VEGETARIANO, 60);
+
+        ristorante.printRistorante(cliente2);
+
+        ristorante.prenota(cliente1);
+        ristorante.prenota(cliente2);
+        ristorante.prenota(cliente3);
+        ristorante.prenota(cliente4);
+        ristorante.checkPrenotazioni();
+//        Query query=new Query();
+//        try {
 //
-//        ristorante.printRistorante(cliente2);
-//
-//        ristorante.prenota(cliente2, 12);
-//        ristorante.prenota(cliente2, 15);
-//        ristorante.prenota(cliente1, 25);
-//        ristorante.checkPrenotazioni();
-        Query query=new Query();
-        try {
-
-        query.queryCreateTableAntipasti();
-        query.queryCreateTablePrimiPiatti();
-        query.queryCreateTableSecondiPiatti();
-        query.queryCreateTableDolci();
-        query.queryCreateTableBevande();
-        } catch (Exception e){
-            e.printStackTrace();
-        }
+//        query.queryCreateTableAntipasti();
+//        query.queryCreateTablePrimiPiatti();
+//        query.queryCreateTableSecondiPiatti();
+//        query.queryCreateTableDolci();
+//        query.queryCreateTableBevande();
+//        } catch (Exception e){
+//            e.printStackTrace();
+//        }
 
 
     }
