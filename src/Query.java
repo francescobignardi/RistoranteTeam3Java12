@@ -6,8 +6,8 @@ import java.sql.Statement;
 public class Query {
     //fields per la connessione al database
 
-    private static final String URL = "";
-    private static final String USER = "";
+    private static final String URL = "jdbc:mysql://localhost:3306/";
+    private static final String USER = "root";
     private static final String PASS = "";
 
     //query create
@@ -16,7 +16,6 @@ public class Query {
 
         Connection conn = DriverManager.getConnection(URL, USER, PASS);
         //Inserire la sintassi della query e dare nome appropriato
-        System.out.println("Query eseguita correttamente");
         String queryCreate = """
                 CREATE TABLE if not exists Antipasti(
                 	id int auto_increment primary key,
@@ -29,15 +28,16 @@ public class Query {
         Statement stmt = conn.createStatement();
         stmt.executeUpdate(queryCreate);
 
+        System.out.println("Query eseguita correttamente");
         stmt.close();
     }
 
-    public void queryCreateTablePrimoPiatto() throws SQLException {
+    public void queryCreateTablePrimiPiatti() throws SQLException {
 
         Connection conn = DriverManager.getConnection(URL, USER, PASS);
         //Inserire la sintassi della query e dare nome appropriato
         String queryCreate = """
-                CREATE TABLE if not exists PrimoPiatto(
+                CREATE TABLE if not exists PrimiPiatti(
                 	id int auto_increment primary key,
                 	name varchar(255),
                 	price double,
@@ -117,8 +117,64 @@ public class Query {
         Connection conn = DriverManager.getConnection(URL, USER, PASS);
         //Inserire la sintassi della query e dare nome appropriato
         String queryInsert=""
-                + "insert into antipasti (name, price, isOutMenu, isCold, isFried) "
+                + "insert into Antipasti (name, price, isOutMenu, isCold, isFried) "
                 + "values('"+name+"', "+price+"," +isOutMenu+","+ isCold+","+isFried+");";
+
+        Statement stmt = conn.createStatement();
+        stmt.executeUpdate(queryInsert);
+        System.out.println("Query eseguita correttamente");
+
+        stmt.close();
+    }
+    public void queryInsertIntoPrimiPiatti(String name, Double price, boolean isOutMenu, boolean isIntegral, boolean isGlutenFree) throws SQLException {
+
+        Connection conn = DriverManager.getConnection(URL, USER, PASS);
+        //Inserire la sintassi della query e dare nome appropriato
+        String queryInsert=""
+                + "insert into PrimiPiatti (name, price, isOutMenu, isIntegral, isGlutenFree) "
+                + "values('"+name+"', "+price+"," +isOutMenu+","+ isIntegral+","+isGlutenFree+");";
+
+        Statement stmt = conn.createStatement();
+        stmt.executeUpdate(queryInsert);
+        System.out.println("Query eseguita correttamente");
+
+        stmt.close();
+    }
+    public void queryInsertIntoSecondiPiatti(String name, Double price, boolean isOutMenu, boolean hasSideDish) throws SQLException {
+
+        Connection conn = DriverManager.getConnection(URL, USER, PASS);
+        //Inserire la sintassi della query e dare nome appropriato
+        String queryInsert=""
+                + "insert into SecondiPiatti (name, price, isOutMenu, hasSideDish) "
+                + "values('"+name+"', "+price+"," +isOutMenu+","+ hasSideDish+");";
+
+        Statement stmt = conn.createStatement();
+        stmt.executeUpdate(queryInsert);
+        System.out.println("Query eseguita correttamente");
+
+        stmt.close();
+    }
+    public void queryInsertIntoDolci(String name, Double price, boolean isOutMenu, boolean isSugarFree, boolean isLactoseFree) throws SQLException {
+
+        Connection conn = DriverManager.getConnection(URL, USER, PASS);
+        //Inserire la sintassi della query e dare nome appropriato
+        String queryInsert=""
+                + "insert into Dolci (name, price, isOutMenu, isSugarFree, isLactoseFree) "
+                + "values('"+name+"', "+price+"," +isOutMenu+","+isSugarFree +","+isLactoseFree+");";
+
+        Statement stmt = conn.createStatement();
+        stmt.executeUpdate(queryInsert);
+        System.out.println("Query eseguita correttamente");
+
+        stmt.close();
+    }
+    public void queryInsertIntoBevande(String name, Double price, boolean isOutMenu, boolean isCold, boolean isHomeMade, boolean isAlcoholic) throws SQLException {
+
+        Connection conn = DriverManager.getConnection(URL, USER, PASS);
+        //Inserire la sintassi della query e dare nome appropriato
+        String queryInsert=""
+                + "insert into Bevande (name, price, isOutMenu, isCold, isHomeMade, isAlcoholic) "
+                + "values('"+name+"', "+price+"," +isOutMenu+","+ isCold+","+isHomeMade+","+isAlcoholic+");";
 
         Statement stmt = conn.createStatement();
         stmt.executeUpdate(queryInsert);

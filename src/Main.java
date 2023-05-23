@@ -6,13 +6,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
         Menu menu = new Menu("Il menu di casa", "Bastianich", TypeEnum.CARNIVORO);
-        menu.addPortata(new PrimoPiatto("Carbonara", 11.00,false, false, false));
-        menu.addPortata(new PrimoPiatto("Amatriciana", 10.00,false, false, false));
-        menu.addPortata(new PrimoPiatto("Lasagne al ragu", 6.00,false, false, false));
-        menu.addPortata(new PrimoPiatto("Boscaiola", 10.00,false, true, true));
-        menu.addPortata(new PrimoPiatto("Tagliatelle al ragu di maialino dei Nebrodi", 16.00,true, false, true));
+        menu.addPortata(new PrimiPiatti("Carbonara", 11.00,false, false, false));
+        menu.addPortata(new PrimiPiatti("Amatriciana", 10.00,false, false, false));
+        menu.addPortata(new PrimiPiatti("Lasagne al ragu", 6.00,false, false, false));
+        menu.addPortata(new PrimiPiatti("Boscaiola", 10.00,false, true, true));
+        menu.addPortata(new PrimiPiatti("Tagliatelle al ragu di maialino dei Nebrodi", 16.00,true, false, true));
 
         menu.addPortata(new Antipasti("Patatine fritte", 4.00, false, false, true));
         menu.addPortata(new Antipasti("Misto caldo", 6.00, false, false, false));
@@ -39,7 +39,7 @@ public class Main {
         menu.addPortata(new Dolci("Sfogliatella", 4.50,false, false, false));
 
         Menu menuVegetariano = new Menu("Il menu per vegetariani", "Giorgio", TypeEnum.VEGETARIANO);
-        menuVegetariano.addPortata(new PrimoPiatto("Pasta al pesto", 8.00,false, false, false));
+        menuVegetariano.addPortata(new PrimiPiatti("Pasta al pesto", 8.00,false, false, false));
 
         menuVegetariano.addPortata(new Antipasti("Patatine vegetariane", 5.00, false, false, true));
 
@@ -70,20 +70,27 @@ public class Main {
 
 
 
-        Cliente cliente1 = new Cliente("Gabriele", "", "", "","", 24, TypeEnum.CARNIVORO);
-        Cliente cliente2 = new Cliente("Raffaele", "", "", "","", 20, TypeEnum.VEGETARIANO);
-
-        ristorante.printRistorante(cliente2);
-
-        ristorante.prenota(cliente2, 12);
-        ristorante.prenota(cliente2, 15);
-        ristorante.prenota(cliente1, 25);
-        ristorante.checkPrenotazioni();
+//        Cliente cliente1 = new Cliente("Gabriele", "", "", "","", 24, TypeEnum.CARNIVORO);
+//        Cliente cliente2 = new Cliente("Raffaele", "", "", "","", 20, TypeEnum.VEGETARIANO);
+//
+//        ristorante.printRistorante(cliente2);
+//
+//        ristorante.prenota(cliente2, 12);
+//        ristorante.prenota(cliente2, 15);
+//        ristorante.prenota(cliente1, 25);
+//        ristorante.checkPrenotazioni();
         Query query=new Query();
-        try{
-        query.queryCreateTablePrimoPiatto(PrimoPiatto.getQueryCreateTable());
-        }catch (SQLException e){
+        try {
+
+        query.queryCreateTableAntipasti();
+        query.queryCreateTablePrimiPiatti();
+        query.queryCreateTableSecondiPiatti();
+        query.queryCreateTableDolci();
+        query.queryCreateTableBevande();
+        } catch (Exception e){
             e.printStackTrace();
         }
+
+
     }
 }

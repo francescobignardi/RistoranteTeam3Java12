@@ -64,7 +64,7 @@ public class Menu {
         System.out.println("\n" + ColoriAnsiEnum.BACKGROUND_GREEN.getColorCode() + "Antipasti" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
         portataList.stream().filter(antipasto -> antipasto instanceof Antipasti).forEach(Portata::print);
         System.out.println("\n" + ColoriAnsiEnum.BACKGROUND_GREEN.getColorCode() + "Primi piatti" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
-        portataList.stream().filter(primo -> primo instanceof PrimoPiatto).forEach(Portata::print);
+        portataList.stream().filter(primo -> primo instanceof PrimiPiatti).forEach(Portata::print);
         System.out.println("\n" + ColoriAnsiEnum.BACKGROUND_GREEN.getColorCode() + "Secondi piatti" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
         portataList.stream().filter(secondo -> secondo instanceof SecondiPiatti).forEach(Portata::print);
         System.out.println("\n" + ColoriAnsiEnum.BACKGROUND_GREEN.getColorCode() + "Dolci" + ColoriAnsiEnum.ANSI_RESET.getColorCode());
@@ -100,7 +100,7 @@ public class Menu {
                 prezzoAntipasti += portata.getPrice();
                 countA += 1;
             }
-            if (portata instanceof PrimoPiatto) {
+            if (portata instanceof PrimiPiatti) {
                 prezzoPrimoPiatto += portata.getPrice();
                 countP+=1;
             }

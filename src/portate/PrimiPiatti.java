@@ -2,12 +2,12 @@ package portate;
 
 import enumaration.ColoriAnsiEnum;
 
-public class PrimoPiatto extends Portata {
+public class PrimiPiatti extends Portata {
 
     private boolean isIntegral;
     private boolean isGlutenFree;
 
-    public PrimoPiatto(String name, Double price, boolean isOutMenu, boolean isIntegral, boolean isGlutenFree) {
+    public PrimiPiatti(String name, Double price, boolean isOutMenu, boolean isIntegral, boolean isGlutenFree) {
         super(name, price,isOutMenu);
         this.isIntegral = isIntegral;
         this.isGlutenFree = isGlutenFree;
