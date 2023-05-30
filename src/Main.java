@@ -1,3 +1,4 @@
+import ClassiDAO.DaoAntipasti;
 import enumaration.TypeEnum;
 import portate.*;
 
@@ -75,24 +76,16 @@ public class Main {
         Cliente cliente3 = new Cliente("Francesco", "", "", "","", 20, TypeEnum.VEGETARIANO, 60);
         Cliente cliente4 = new Cliente("Pippo", "", "", "","", 20, TypeEnum.VEGETARIANO, 60);
 
-        ristorante.printRistorante(cliente2);
-
-        ristorante.prenota(cliente1);
-        ristorante.prenota(cliente2);
-        ristorante.prenota(cliente3);
-        ristorante.prenota(cliente4);
-        ristorante.checkPrenotazioni();
-//        Query query=new Query();
-//        try {
+//        ristorante.printRistorante(cliente2);
 //
-//        query.queryCreateTableAntipasti();
-//        query.queryCreateTablePrimiPiatti();
-//        query.queryCreateTableSecondiPiatti();
-//        query.queryCreateTableDolci();
-//        query.queryCreateTableBevande();
-//        } catch (Exception e){
-//            e.printStackTrace();
-//        }
+//        ristorante.prenota(cliente1);
+//        ristorante.prenota(cliente2);
+//        ristorante.prenota(cliente3);
+//        ristorante.prenota(cliente4);
+//        ristorante.checkPrenotazioni();
+//        DaoAntipasti antipastiDao=new DaoAntipasti();
+//        antipastiDao.queryCreateTableAntipasti("antipasti");
+
 
 
     }

@@ -1,7 +1,7 @@
 public class Tavolo {
     private Integer numeroUnitaTavolo;
 
-    public Tavolo(Integer coperti, Integer numeroUnitaTavolo) {
+    public Tavolo(Integer numeroUnitaTavolo) {
         this.numeroUnitaTavolo = numeroUnitaTavolo;
     }
 

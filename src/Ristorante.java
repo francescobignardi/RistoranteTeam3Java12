@@ -11,15 +11,15 @@ public class Ristorante {
     private Integer stelleMichelin;
     private String address;
     private Double mediumPrice;
-    private final Integer MAX_NUMERO_TAVOLI;
+    private Integer maxNumeroDiTavoli;
     private Map<Cliente, Tavolo> prenotazioni;
 
-    public Ristorante(String name, String description, Integer stelleMichelin, String address, Integer MAX_NUMERO_TAVOLI, List<Menu> menuList) {
+    public Ristorante(String name, String description, Integer stelleMichelin, String address, Integer maxNumeroDiTavoli, List<Menu> menuList) {
         this.name = name;
         this.description = description;
         this.stelleMichelin = stelleMichelin;
         this.address = address;
-        this.MAX_NUMERO_TAVOLI = MAX_NUMERO_TAVOLI;
+        this.maxNumeroDiTavoli = maxNumeroDiTavoli;
         this.prenotazioni = new HashMap<>();
         this.menuList = menuList;
         this.mediumPrice = prezzoMedioRistorante();
@@ -58,7 +58,7 @@ public class Ristorante {
     }
 
     public Integer getMAX_NUMERO_TAVOLI() {
-        return MAX_NUMERO_TAVOLI;
+        return maxNumeroDiTavoli;
     }
 
     public Map<Cliente, Tavolo> getPrenotazioni() {
@@ -103,23 +103,30 @@ public class Ristorante {
         this.menuList.add(menu);
     }
 
-    public boolean controlloDisponibilita() {
+    public boolean controlloDisponibilita(Cliente cliente) {
         int counter = 0;
         for (Map.Entry<Cliente, Tavolo> prenotazione : prenotazioni.entrySet()) {
             counter += prenotazione.getValue().getNumeroUnitaTavolo();
         }
-        return counter <= MAX_NUMERO_TAVOLI;
+        int unita = 0;
+        if (cliente.getNumeroPersonePrenotazione() > 4) {
+            unita = (int) Math.ceil(cliente.getNumeroPersonePrenotazione() / 4);
+        } else {
+            unita = 1;
+        }
+        boolean condiction = counter + unita <= maxNumeroDiTavoli;
+        return condiction;
     }
 
     public void prenota(Cliente cliente) {
-        if (controlloDisponibilita()) {
+        if (controlloDisponibilita(cliente)) {
             int unita = 0;
             if (cliente.getNumeroPersonePrenotazione() > 4) {
                 unita = (int) Math.ceil(cliente.getNumeroPersonePrenotazione() / 4);
             } else {
                 unita = 1;
             }
-            Tavolo tavolo = new Tavolo(cliente.getNumeroPersonePrenotazione(), unita);
+            Tavolo tavolo = new Tavolo(unita);
             prenotazioni.put(cliente, tavolo);
         } else {
             System.out.println("Mi dispiace, posti esauriti! :(");
