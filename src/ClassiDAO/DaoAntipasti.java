@@ -10,7 +10,7 @@ public class DaoAntipasti {
     private static final String USER = "root";
     private static final String PASS = "";
 
-    public void queryCreateTableAntipasti(String nomeTabella) {
+    public void createTable(String nomeTabella) {
         try {
 
             Connection conn = DriverManager.getConnection(URL, USER, PASS);
@@ -27,7 +27,6 @@ public class DaoAntipasti {
 
             Statement stmt = conn.createStatement();
             stmt.executeUpdate(queryCreate);
-
             System.out.println("Query eseguita correttamente");
             stmt.close();
             conn.close();
@@ -37,7 +36,7 @@ public class DaoAntipasti {
         }
     }
 
-    public void insertAntipasti(Antipasti antipasti, String nomeTabella) {
+    public void insert(Antipasti antipasti, String nomeTabella) {
 
         try {
             Connection conn = DriverManager.getConnection(URL, USER, PASS);

@@ -10,12 +10,11 @@ public class DaoBevande {
     private static final String USER = "root";
     private static final String PASS = "";
 
-    public void queryCreateTableBevande(String nomeTabella) {
+    public void createTable(String nomeTabella) {
         try {
 
             Connection conn = DriverManager.getConnection(URL, USER, PASS);
             //Inserire la sintassi della query e dare nome appropriato
-            System.out.println("Query eseguita correttamente");
             String queryCreate =
                     "CREATE TABLE if not exists " + nomeTabella + "(" +
                             "id int auto_increment primary key," +
@@ -28,7 +27,7 @@ public class DaoBevande {
                             ");";
             Statement stmt = conn.createStatement();
             stmt.executeUpdate(queryCreate);
-
+            System.out.println("Query eseguita correttamente");
             stmt.close();
             conn.close();
         } catch (Exception e) {
@@ -37,7 +36,7 @@ public class DaoBevande {
         }
     }
 
-    public void insertBevande(Bevande bevande, String nomeTabella) {
+    public void insert(Bevande bevande, String nomeTabella) {
 
         try {
             Connection conn = DriverManager.getConnection(URL, USER, PASS);

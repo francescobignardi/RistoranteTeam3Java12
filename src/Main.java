@@ -1,4 +1,4 @@
-import ClassiDAO.DaoAntipasti;
+import ClassiDAO.*;
 import enumaration.TypeEnum;
 import portate.*;
 
@@ -83,8 +83,23 @@ public class Main {
 //        ristorante.prenota(cliente3);
 //        ristorante.prenota(cliente4);
 //        ristorante.checkPrenotazioni();
-//        DaoAntipasti antipastiDao=new DaoAntipasti();
-//        antipastiDao.queryCreateTableAntipasti("antipasti");
+        DaoAntipasti daoAntipasti=new DaoAntipasti();
+        DaoPrimiPiatti daoPrimiPiatti= new DaoPrimiPiatti();
+        DaoSecondiPiatti daoSecondiPiatti= new DaoSecondiPiatti();
+        DaoBevande daoBevande= new DaoBevande();
+        DaoDolci daoDolci= new DaoDolci();
+
+        daoAntipasti.createTable("antipasti");
+        daoPrimiPiatti.createTable("primi_piatti");
+        daoSecondiPiatti.createTable(("secondi_piatti"));
+        daoBevande.createTable("bevande");
+        daoDolci.createTable("dolci");
+
+        menu.getPortataList().stream().filter(n->n instanceof Antipasti).forEach(n->daoAntipasti.insert((Antipasti) n, "antipasti"));
+        menu.getPortataList().stream().filter(n->n instanceof PrimiPiatti).forEach(n->daoPrimiPiatti.insert((PrimiPiatti) n, "primi_piatti"));
+        menu.getPortataList().stream().filter(n->n instanceof SecondiPiatti).forEach(n->daoSecondiPiatti.insert((SecondiPiatti) n, "secondi_piatti"));
+        menu.getPortataList().stream().filter(n->n instanceof Dolci).forEach(n->daoDolci.insert((Dolci) n, "dolci"));
+        menu.getPortataList().stream().filter(n->n instanceof Bevande).forEach(n->daoBevande.insert((Bevande) n, "bevande"));
 
 
 

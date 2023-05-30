@@ -10,12 +10,11 @@ public class DaoDolci {
     private static final String USER = "root";
     private static final String PASS = "";
 
-    public void queryCreateTableDolci(String nomeTabella) {
+    public void createTable(String nomeTabella) {
         try {
 
             Connection conn = DriverManager.getConnection(URL, USER, PASS);
             //Inserire la sintassi della query e dare nome appropriato
-            System.out.println("Query eseguita correttamente");
             String queryCreate = """
                     CREATE TABLE if not exists Dolci(
                     	id int auto_increment primary key,
@@ -27,7 +26,7 @@ public class DaoDolci {
                     );""";
             Statement stmt = conn.createStatement();
             stmt.executeUpdate(queryCreate);
-
+            System.out.println("Query eseguita correttamente");
             stmt.close();
             conn.close();
         } catch (Exception e) {
@@ -36,7 +35,7 @@ public class DaoDolci {
         }
     }
 
-    public void insertDolci(Dolci dolci, String nomeTabella) {
+    public void insert(Dolci dolci, String nomeTabella) {
 
         try {
             Connection conn = DriverManager.getConnection(URL, USER, PASS);

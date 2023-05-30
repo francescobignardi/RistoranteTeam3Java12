@@ -11,7 +11,7 @@ public class DaoPrimiPiatti {
     private static final String USER = "root";
     private static final String PASS = "";
 
-    public void queryCreateTablePrimiPiatti(String nomeTabella) {
+    public void createTable(String nomeTabella) {
         try {
 
             Connection conn = DriverManager.getConnection(URL, USER, PASS);
@@ -28,7 +28,6 @@ public class DaoPrimiPiatti {
             Statement stmt = conn.createStatement();
             stmt.executeUpdate(queryCreate);
             System.out.println("Query eseguita correttamente");
-
             stmt.close();
             conn.close();
         } catch (Exception e) {
@@ -37,7 +36,7 @@ public class DaoPrimiPiatti {
         }
     }
 
-    public void insertPrimiPiatti(PrimiPiatti primiPiatti, String nomeTabella) {
+    public void insert(PrimiPiatti primiPiatti, String nomeTabella) {
 
         try {
             Connection conn = DriverManager.getConnection(URL, USER, PASS);

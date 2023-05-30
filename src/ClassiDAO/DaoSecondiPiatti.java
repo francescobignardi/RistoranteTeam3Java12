@@ -24,17 +24,15 @@ public class DaoSecondiPiatti {
             Statement stmt = conn.createStatement();
             stmt.executeUpdate(queryCreate);
             System.out.println("Query eseguita correttamente");
-
             stmt.close();
             conn.close();
         } catch (SQLException e) {
             System.out.println("Problema nella creazione della tabella " + nomeTabella);
             e.printStackTrace();
         }
-        System.out.println("Tabella creata");
     }
 
-    public void insertSecondiPiatti(SecondiPiatti secondiPiatti, String nomeTabella) {
+    public void insert(SecondiPiatti secondiPiatti, String nomeTabella) {
 
         try {
             Connection conn = DriverManager.getConnection(URL, USER, PASS);
